@@ -1,0 +1,81 @@
+.e2ma-template {
+  h1, h2, h3, h4, h5, h6 {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline
+      h1 {
+        font-size: 26px;
+        font-weight: normal;
+        color: #333
+      }
+      h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        color: #333
+      }
+      h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        color: #333
+      }
+      h4 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: normal;
+        color: #333
+      }
+      .e2ma-content-block,
+      .e2ma-combo-block,
+      .e2ma-combo-content {
+        p,
+        li {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 13px;
+          color: #333
+        }
+      }
+      .link {
+        color: #333;
+        text-decoration: underline;
+      }
+      #template_container,
+        a {
+          @extend .link;
+        }
+      }
+      blockquote {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        font-style: italic
+        p {
+        margin-bottom: 0
+        }
+      }
+
+      .editable_image { 
+        img {
+          display: block;
+          border: 0
+        }
+      }
+
+      .e2ma-unsubscribe {
+        padding-bottom: 10px
+      }
+
+      .business_rsvp {
+        font-family: Helvetica, Arial, sans-serif;
+        padding: 10px;
+        color: #666;
+        font-size: 10px
+      }
+}
+
