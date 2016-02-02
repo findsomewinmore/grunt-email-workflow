@@ -1,6 +1,10 @@
 /* -------------------------------------
-    RESPONSIVE AND MOBILE FRIENDLY STYLES
-------------------------------------- */
+ *   RESPONSIVE AND MOBILE FRIENDLY STYLES
+ *   STAHP! HAVE YOU DONE STACKING LAYOUT FIRST?
+ *   Note: Consider the hybrid coding approach
+ *   http://labs.actionrocket.co/the-hybrid-coding-approach
+
+ *----------------------------------------------- */
 
 table[class=body]{
   @media only screen and (max-width: $width+40) {
@@ -45,6 +49,7 @@ table[class=body]{
 }
 
 @media screen and (max-width: 480px) {
+
   .e2ma-template {
     html {
       -webkit-text-size-adjust: none;
