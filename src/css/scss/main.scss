@@ -1,9 +1,16 @@
-@import 'config',
-        'global',
-        'layout',
-        'type',
-        'buttons',
-        'notices',
-        'dividers',
-        'other',
-        'responsive';
+@import '../../../node_modules/modularscale-sass/stylesheets/modular-scale';
+
+@import 'base/variables',
+        'base/reset',
+        'base/type';
+
+
+@import 'layout/header',
+        'layout/base',
+        'layout/footer';
+
+@import 'components/buttons',
+        'components/notices',
+        'components/dividers';
+
+@import 'responsive';

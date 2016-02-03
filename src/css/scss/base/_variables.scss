@@ -2,17 +2,30 @@
     CONFIGURE YOUR VARIABLES
 ------------------------------------- */
 
-$padding: 30px; // For consistent padding
-$grey: #f6f6f6; // Background color
-$width: 580px; // Width of the content area
+$padding: ms(2); // For consistent padding
+
+// Width of the content area. Consider staying within 580-700
+$width: 580px;
 $br: 3px; // Border radius
 $btn-br: 5px; // Border radius
+
+// Colors
+// -------
+$grey: #f6f6f6; 
+$body-bg-color: $grey;
 $primary-color: #348eda; // Primary color for buttons and links
-$font-color: #111111; // Default font color
 
 // Typography
 // -------
 
+// Modular Scale Settings
+// See https://github.com/modularscale/modularscale-sass for details.
+$ms-base:  14px; // Use pixels, because email
+$ms-ratio: $minor-third;
+$ms-range: null;
+$ms-fluid: true;
+
+$font-color: #111111; // Default font color
 $body-font-family:          "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
 $body-font-weight:          400 !default;
 $body-font-size:            14px !default;

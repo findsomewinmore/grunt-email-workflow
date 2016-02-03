@@ -2,21 +2,21 @@
     BODY & CONTAINER
 ------------------------------------- */
 
-body{
-  background-color: $grey;
+body {
+  background-color: $body-bg-color;
 }
 
 .body {
-  background-color: $grey;
+  background-color: $body-bg-color;
   width: 100%;
 }
 
 /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
 .container {
   display: block;
-  Margin: 0 auto !important; /* makes it centered */
+  margin: 0 auto !important; /* makes it centered */
   max-width: $width;
-  padding: 10px;
+  padding: ms(0);
   width: auto !important;
   width: $width;
 }
@@ -26,12 +26,12 @@ body{
   display: block;
   margin: 0 auto;
   max-width: $width;
-  padding: 10px;
+  padding: ms(0);
 }
 
 
 /* -------------------------------------
-    HEADER, FOOTER, MAIN
+    MAIN
 ------------------------------------- */
 
 .main {
@@ -50,22 +50,16 @@ body{
   padding: 0 0 $padding;
 }
 
-.header {
-  margin-bottom: $padding;
-  margin-top: ($padding - 10);
-  width: 100%;
-}
-
-.footer {
-  clear: both;
-  width: 100%;
-
-  * {
-    color: #999999;
-    font-size: 12px;
-  }
-
-  td {
-    padding: 20px 0;
-  }
+// Preheader text is displayed in certain clients as a preview but not shown when the user opens the email
+.preheader {
+  color: transparent;
+  display: none;
+  height: 0;
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  mso-hide: all;
+  visibility: hidden;
+  width: 0;
 }
