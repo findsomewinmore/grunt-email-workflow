@@ -1,15 +1,27 @@
 /* -------------------------------------
  *   RESPONSIVE AND MOBILE FRIENDLY STYLES
  *   STAHP! HAVE YOU DONE STACKING LAYOUT FIRST?
- *   Note: Consider the hybrid coding approach
+ *
+ *   Consider the hybrid coding approach
  *   http://labs.actionrocket.co/the-hybrid-coding-approach
+
+     ALSO, MAKE SURE YOU USE ATTRIBUTE SELECTORS OR YOUR
+     STYLE WILL BE STRIPPED OUT IN YAHOO
+
+     i.e 
+     div[class=content-box] {
+       width: 100%;
+     }
+
+     For a list of clients that support media queries, visit:
+     https://litmus.com/help/email-clients/media-query-support/
 
  *----------------------------------------------- */
 
 table[class=body]{
   @media only screen and (max-width: $width+40) {
 
-    // Type
+    /* Type */
     h1,
     h2,
     h3,
@@ -29,7 +41,7 @@ table[class=body]{
       font-size: 16px !important;
     }
 
-    // Spacing
+    /* Spacing */
     .content,
     .wrapper {
       padding: 10px !important;
@@ -40,7 +52,7 @@ table[class=body]{
       width: 100% !important;
     }
 
-    // Buttons
+    /* Buttons */
     .btn table,
     .btn a {
       width: 100% !important;
@@ -50,10 +62,16 @@ table[class=body]{
 
 @media screen and (max-width: 480px) {
 
+  /* Emma-specific styling. Need to revisit this with emma testing to see if it works 
+  /* Emma will wrap all styles in their own parent class, so we want to add this 
+  /* so that nothing gets messed up when importing code.
+   */
+
   .e2ma-template {
     html {
       -webkit-text-size-adjust: none;
     }
+
     *[class].e2ma-content-block, 
     *[class].e2ma-combo-block, 
     *[class].e2ma-combo-content, 
@@ -99,6 +117,7 @@ table[class=body]{
       text-align: center !important;
       padding-bottom: 10px;
     }
+
     *[class].e2ma-layout-column-content, 
     *[class].e2ma-single-column-layout, 
     *[class].e2ma-layout-column-sidebar, 
@@ -182,5 +201,50 @@ table[class=body]{
     *[class].sanborder {
       border: none !important;
     }
+  }
+
+  /* These are responsive styles for mailchimp's modular template patterns. 
+  /* You can find them here: https://github.com/mailchimp/email-blueprints/blob/master/modular-template-patterns/modular-template-patterns.html
+  */
+
+  table[id="emailBody"], 
+  table[class="flexibleContainer"] {
+    width:100% !important;
+  }
+
+  /*
+    The following style rule makes any
+    image classed with 'flexibleImage'
+    fluid when the query activates.
+    Make sure you add an inline max-width
+    to those images to prevent them
+    from blowing out. 
+  */
+
+  img[class="flexibleImage"]{
+    height:auto !important; 
+    width:100% !important;
+  }
+
+  /*
+    Make buttons in the email span the
+    full width of their container, allowing
+    for left- or right-handed ease of use.
+  */
+
+  table[class="emailButton"] {
+    width:100% !important;
+  }
+
+  td[class="buttonContent"] { 
+    padding:0 !important;
+    a {
+      padding:15px !important;
+    }
+  }
+
+  td[class="textContentLast"], 
+  td[class="imageContentLast"] { 
+    padding-top:20px !important;
   }
 }

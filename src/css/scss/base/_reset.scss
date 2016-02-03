@@ -1,5 +1,5 @@
 /* -------------------------------------
-    GLOBAL RESETS
+GLOBAL RESETS
 ------------------------------------- */
 
 table,
@@ -10,42 +10,49 @@ a {
 }
 
 img {
-  -ms-interpolation-mode: bicubic;
   max-width: 100%;
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
 }
 
 body {
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 14px;
+  font-size: ms(0);
   height: 100% !important;
-  line-height: 1.6em;
+  line-height: ms(1);
   margin: 0;
   padding: 0;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   width: 100% !important;
 }
 
 // Let's make sure all tables have defaults
+
 table {
   border-collapse: separate !important;
-  mso-table-lspace: 0pt;
-  mso-table-rspace: 0pt;
   width: 100%;
 
   td {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 14px;
+    font-family: $body-font-family;
+    font-size: ms(0);
     vertical-align: top;
+    border-collapse: collapse;
   }
 }
 
-// External class fix for Outlook.com
-.ExternalClass {
-  width: 100%;
+/* Force Hotmail/Outlook.com to display emails at full width. */
+.ReadMsgBody {
+  width:100%;
+} 
+
+.ExternalClass{
+  width:100%;
 }
 
+ /* Force Hotmail/Outlook.com to display line heights normally. */
 .ExternalClass,
 .ExternalClass p,
 .ExternalClass span,
@@ -53,4 +60,45 @@ table {
 .ExternalClass td,
 .ExternalClass div {
   line-height: 100%;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up. */
+table, 
+td {
+  mso-table-lspace:0pt; 
+  mso-table-rspace:0pt;
+} 
+
+/* Force Outlook 2007 and up to provide a "view in browser" message. */
+#outlook {
+  a {
+    padding: 0;
+  }
+} 
+
+ /* Force IE to smoothly render resized images. */
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
+body, 
+table, 
+td, 
+p, 
+a, 
+li, 
+blockquote {
+-ms-text-size-adjust: 100%; 
+-webkit-text-size-adjust: 100%;
+} 
+
+@media only screen and (max-width: 480px) {
+  body {
+    /* Force iOS Mail to render the email at full width. */
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+
 }

@@ -1,0 +1,177 @@
+/* Styling for Mailchimp's Modular Template Patterns 
+ * https://github.com/mailchimp/email-blueprints/blob/master/modular-template-patterns/modular-template-patterns.html
+ */
+
+.flexibleContainer {
+  width: $width;
+}
+.flexibleContainerCell {
+  width: $width;
+  padding-top: ms(1);
+  padding-Right: ms(1);
+  padding-Left: ms(1);
+}
+
+.-module {
+  &-two-column {
+    > table.flexibleContainer {
+      width: (($width / 2) - (ms(1) * 2));
+    }
+    &.nestedContainerCell {
+      > table.flexibleContainer {
+        width: (($width / 2) - (ms(1) * 3));
+      }
+    }
+  }
+  &-image-left {
+    table.flexibleContainer {
+      &:first-child {
+        width: floor(($width - (ms(1) * 4)) * .33)
+      }
+      &:last-child {
+        width: floor(($width - (ms(1) * 4)) * .66)
+      }
+    }
+  }
+
+  &-image-right {
+    table.flexibleContainer {
+      &:first-child {
+        width: floor(($width - (ms(1) * 4)) * .33)
+      }
+      &:last-child {
+        width: floor(($width - (ms(1) * 4)) * .66)
+      }
+    }
+  }
+  &-calendar-right {
+    table.flexibleContainer {
+      &:first-child {
+        width: floor(($width - (ms(1) * 5)) * .33)
+      }
+      &:last-child {
+        width: floor(($width - (ms(1) * 5)) * .66)
+      }
+    }
+  }
+  &-calendar-left {
+    table.flexibleContainer {
+      &:first-child {
+        width: floor(($width - (ms(1) * 5)) * .33)
+      }
+      &:last-child {
+        width: floor(($width - (ms(1) * 5)) * .66)
+      }
+    }
+  }
+}
+.flexibleImage {
+  height: auto;
+  max-width: ($width - (ms(1) * 2));
+}
+
+.bottomShim {
+  padding-bottom: ms(1);
+}
+
+.imageContent, 
+.imageContentLast {
+  padding-bottom:ms(1);
+}
+
+.nestedContainerCell {
+  padding-top: ms(1);
+  padding-Right: ms(1);
+  padding-Left: ms(1);
+}
+
+#bodyTable {
+  background-color: $body-bg-color;
+}
+
+
+#bodyCell {
+  padding-top: ms(2);
+  padding-bottom: ms(2);
+
+}
+
+#emailBody{
+  width: $width;
+  background-color: #FFFFFF;
+  border:1px solid #DDDDDD;
+  border-collapse:separate;
+  border-radius:4px;
+}
+
+.textContent, 
+.textContentLast {
+  color:#404040;
+  font-family:Helvetica;
+  font-size:16px;
+  line-height:125%;
+  text-align:Left;
+  padding-bottom:20px;
+}
+
+.textContent a, 
+.textContentLast a {
+  color:#2C9AB7;
+  text-decoration:underline;
+}
+
+.nestedContainer {
+  background-color:#E5E5E5;
+  border:1px solid #CCCCCC;
+}
+
+.emailButton {
+  width: (($width / 2) - (ms(1) * 2));
+  background-color:#2C9AB7;
+  border-collapse:separate;
+  border-radius:4px;
+}
+
+.buttonContent {
+  color:#FFFFFF;
+  font-family:Helvetica;
+  font-size:18px;
+  font-weight:bold;
+  line-height:100%;
+  padding:15px;
+  text-align:center;
+}
+
+.buttonContent a {
+  color:#FFFFFF;
+  display:block;
+  text-decoration:none;
+}
+
+.emailCalendar {
+  background-color:#FFFFFF;
+  border:1px solid #CCCCCC;
+}
+
+.emailCalendarMonth {
+  background-color:#2C9AB7;
+  color:#FFFFFF;
+  font-family:Helvetica, Arial, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+}
+
+.emailCalendarDay {
+  color:#2C9AB7;
+  font-family:Helvetica, Arial, sans-serif;
+  font-size:60px;
+  font-weight:bold;
+  line-height:100%;
+  padding-top:20px;
+  padding-bottom:20px;
+  text-align:center;
+}
+
