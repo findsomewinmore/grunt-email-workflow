@@ -2,113 +2,135 @@
 layout: emma.hbs
 subject: Default Emma template 
 ---
-      <div data-e2ma-name="Backdrop" data-e2ma-styles="background" style="margin:0; padding:0; width:100% !important; background-color: #ffffff; background-image: url();">
-        <table background="file:///Design/your_background_image_here.jpg" border="0" cellpadding="0" cellspacing="0" data-e2ma-color="#282828, #f5f5f5" style="background-image: url();" width="100%">
-          <tbody>
-            <tr>
-              <td align="center" valign="top">
-                ...
-              </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding:15px 0px;" valign="top">
+<center>
+  <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+    <tr>
+      <td align="center" valign="top" id="bodyCell">
+        <!-- EMAIL CONTAINER // -->
+        <!--
+        The table "emailBody" is the email's container.
+        Its width can be set to 100% for a color band
+        that spans the width of the page.
+        -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600" id="emailBody">
 
-              <table border="0" cellpadding="0" cellspacing="0" class="mobile-width-nopad" id="template_container" width="640">
+
+          <tr>
+            <td align="center" valign="top">
+              <!-- CENTERING TABLE // -->
+              <!--
+              The centering table keeps the content
+              tables centered in the emailBody table,
+              in case its width is set to 100%.
+              -->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center" valign="top">
+
+                    <!-- FLEXIBLE CONTAINER // -->
+                    <!--
+                    The flexible container has a set width
+                    that gets overridden by the media query.
+                    Most content tables within can then be
+                    given 100% widths.
+                    -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                      <tr>
+                        <td align="center" valign="top" width="600" class="flexibleContainerCell">
+
+
+                          <!-- CONTENT TABLE // -->
+                          <!--
+                          The content table is the first element
+                          that's entirely separate from the structural
+                          framework of the email.
+                          -->
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td valign="top" class="textContent">
+                                {{> emma-area }}
+                              </td>
+                            </tr>
+                          </table>
+                          <!-- // CONTENT TABLE -->
+
+
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- // FLEXIBLE CONTAINER -->
+                  </td>
+                </tr>
+              </table>
+              <!-- // CENTERING TABLE -->
+            </td>
+          </tr>
+          <!-- // MODULE ROW -->
+
+          <tr>
+            <td align="center" bgcolor="#F6F7F8" class="e2ma-unsubscribe" style="padding:50px 0px;" valign="top">
+              <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" width="640">
                 <tbody>
                   <tr>
                     <td align="left" valign="top">
-                      ...
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tbody>
+                          <tr>
+                            <td align="left" class="stack" valign="top">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td align="left" class="share-block center" valign="top">
+                                      {{> emma-social-share name="social-share-1" email="true" facebook="true" linkedin="true" twitter="true" }}
+                                    </td>
+                                  </tr>
+                                <tr>
+                                  <td align="left" class="footer-text" style="font-family:Helvetica, Arial, sans-serif; color:#9d9e9f; font-size:11px; line-height:1.8; text-align:left; padding:20px 0px;" valign="top">
+                                    {{ em.bug }}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="left" class="footer-text" style="font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:1.5; text-align:left;" valign="top">
+                                    <a href="#" style="color:#9d9e9f; text-decoration:none; pointer-events:none;">{{{ em2a.account_address }}} {{{ em2a.account_address_2 }}}<br>
+                                      {{{ em2a.account_city }}}, {{{ em2a.account_state }}} | {{{ em2a.account_zip }}} {{{ em2a.account_country }}}</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="left" class="footer-text" style="font-family:Helvetica, Arial, sans-serif;font-size:11px; line-height:1.5; text-align:left; padding-top:20px;" valign="top">
+                                    <a href='{{{ em.email }}}' style='color:#9d9e9f; text-decoration:none;'>{{{ em2a.recipient }}}</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td align="center" class="stack" valign="bottom" width="146">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tbody>
+                                <tr>
+                                  <td align="center" style="padding-top:20px;" valign="bottom">
+                                    <div>{{{ em2a.emma }}}</div>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
                     </td>
-                </tr>
-                <tr>
-                  <td align="left" valign="top">
-                    {{> emma-area }}
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left" valign="top">
-                    ...
-                  </td>
-                </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td align="center" valign="top">
-          ...
-        </td>
-      </tr>
-      <tr>
-        <td align="center" bgcolor="#F6F7F8" class="e2ma-unsubscribe" style="padding:50px 0px;" valign="top">
-          <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" width="640">
-            <tbody>
-              <tr>
-                <td align="left" valign="top">
-                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                    <tbody>
-                      <tr>
-                        <td align="left" class="stack" valign="top">
-                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tbody>
-                              <tr>
-                                <td align="left" class="share-block center" valign="top">
+                  </tr>
+                  <tr>
+                    <td align="left" style="line-height:0px; font-size:0px;" valign="top">
+                      <div style="line-height:0px; font-size:0px;">{{{ em2a.bug }}}</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- // EMAIL CONTAINER -->
+      </td>
+    </tr>
 
-                                  [% socialShare %]
-                                  {
-                                  "name": "socialShare-1",
-                                  "email": true,
-                                  "facebook": true,
-                                  "linkedin": true,
-                                  "twitter": true
-                                  }
-                                  [%/ socialShare %]
-
-                                </td>
-                              </tr>
-                            <tr>
-                              <td align="left" class="footer-text" style="font-family:Helvetica, Arial, sans-serif; color:#9d9e9f; font-size:11px; line-height:1.8; text-align:left; padding:20px 0px;" valign="top">
-                                [% management %]
-                              </td>
-                            </tr>
-                            <tr>
-                              <td align="left" class="footer-text" style="font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:1.5; text-align:left;" valign="top">
-                                <a href="#" style="color:#9d9e9f; text-decoration:none; pointer-events:none;">[% account_rsvp_address_1 %] [% account_rsvp_address_2 %]<br>
-                                [% account_rsvp_city %], [% account_rsvp_state %] | [% account_rsvp_zip_code %] [% account_rsvp_country %]</a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td align="left" class="footer-text" style="font-family:Helvetica, Arial, sans-serif;font-size:11px; line-height:1.5; text-align:left; padding-top:20px;" valign="top">
-                                <a href='[% member:email %]' style='color:#9d9e9f; text-decoration:none;'>[% recipient %]</a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                      <td align="center" class="stack" valign="bottom" width="146">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tbody>
-                            <tr>
-                              <td align="center" style="padding-top:20px;" valign="bottom">
-                                <div>[% emma %]</div>
-                              </td>
-                            </tr>
-                          </tbody></table>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td align="left" style="line-height:0px; font-size:0px;" valign="top">
-                  <div style="line-height:0px; font-size:0px;">[% bug %]</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
   </table>
-</div>
+</center>

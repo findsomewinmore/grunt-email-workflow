@@ -63,3 +63,7 @@ body {
   visibility: hidden;
   width: 0;
 }
+
+.mobile-width {
+  width: $width;
+}
