@@ -1,0 +1,11 @@
+email: "[% member:email default=\"email\" %]"
+first_name: "[% member:name_first default=\"first name\"%]"
+last_name: "[% member:name_last default=\"last name\"%]"
+address: "[% member_address default=\"address\" %]"
+address_2: "[% member_address2 default=\"address2\" %]"
+city: "[% member_city default=\"city\" %]"
+manage_url: "[% manage_url %]"
+unsubscribe_url: "[% unsub_url %]"
+optin_confirm_url: "[% optin_confirm_url %]"
+signup_url: "[% signup_url %]"
+
