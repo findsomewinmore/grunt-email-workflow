@@ -1,4 +1,6 @@
-# Grunt Email Design Workflow
+# Grunt Email Design Workflow w/ BUNZ flavoring
+
+NOTE: This workflow is based on leemunroe's version but replaces Mailgun with Mandrill, uses Modular Scale for consistent spacing/padding, the 7-1 SCSS pattern for organization, bulletproof buttons (https://buttons.cm/) as a component, and some integrations for Mailchimp and Emma. 
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) 
 
