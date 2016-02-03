@@ -1,6 +1,6 @@
-# Grunt Email Design Workflow + Mandrill, Modularscale, 7-1, and more
+# Grunt Email Design Workflow + Mandrill, Modular-Scale, 7-1, and more
 
-NOTE: This workflow is based on leemunroe's version but replaces Mailgun with Mandrill, uses Modular Scale for consistent spacing/padding, the 7-1 SCSS pattern for organization, bulletproof buttons (https://buttons.cm/) as a component, and some integrations for Mailchimp and Emma. 
+NOTE: This workflow is based on leemunroe's version but replaces Mailgun with Mandrill, uses Modular Scale for consistent spacing/padding, the 7-1 SCSS pattern for organization, bulletproof buttons (https://buttons.cm/) as a component, and some integrations for Mailchimp and Emma. Leemunroe and everyone has put a lot of effort into this so definitely check out the original repo.
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) 
 
@@ -24,7 +24,7 @@ You may already have these installed on your system. If not, you'll have to inst
 
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 * Grunt-cli and Grunt (`npm install grunt-cli -g`)
-* [Mailgun](http://www.mailgun.com) (optional) - Sends the email
+* [Mandrill](http://www.mandrill.com) (optional) - Sends the email
 * [Litmus](https://litmus.com) (optional) - Tests the email across all clients/browsers/devices
 * [Rackspace Cloud](http://www.rackspace.com/cloud/files/) (optional) - Uses Cloud Files as a CDN
 
@@ -37,7 +37,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before check out Chris Coyier's
 Clone this repo, cd to the directory, run `npm install` to install the necessary packages.
 
 ```sh
-git clone https://github.com/leemunroe/grunt-email-workflow.git
+git clone https://github.com/bunzrok/grunt-email-workflow.git
 cd grunt-email-workflow
 npm install
 ```
@@ -60,10 +60,11 @@ If you don't use or need these services **it's ok to leave these defaults**, but
 
 ```json
 {
-  "mailgun": {
-    "api_key": "YOUR MG PRIVATE API KEY",
+  "mandrill": {
+    "key": "YOUR MG PRIVATE API KEY",
     "sender": "E.G. POSTMASTER@YOURDOMAIN.COM",
-    "recipient": "WHO YOU WANT TO SEND THE EMAIL TO"
+    "recipient": "WHO YOU WANT TO SEND THE EMAIL TO",
+    "subject": "Test"
   },
   "litmus": {
     "username": "LITMUS USER NAME",
@@ -152,8 +153,8 @@ In terminal, run `grunt serve`.
 
 ### Send the email to yourself
 
-* Sign up for a [Mailgun](http://www.mailgun.com) account (it's free)
-* Insert your Mailgun API key, either in `Gruntfile.js` or `secrets.json`
+* Sign up for a [Mandrill](http://www.mandrill.com) account (it's free)
+* Insert your Mandrill API key in `secrets.json`
 * Change the sender and recipient to your own email address (or whoever you want to send it to)
 
 Run `grunt send --template=TEMPLATE_NAME.html`. This will email out the template you specify.
@@ -172,6 +173,8 @@ If you have a [Litmus](http://www.litmus.com) account and want to test the email
 Run `grunt litmus --template=TEMPLATE_NAME.html` to send the email to Litmus. This will create a new test using the `<title>` value of your template.
 
 [See the Litmus results](https://litmus.com/pub/eb33459/screenshots) for the simple transactional email template that is included.
+
+NOTE: Litmus has some weird rendering issues that I have been dealing with. If this is the case, insert the litmus test email in the mandrill send parameters and test with 'grunt send --template=TEMPLATE_NAME.html' instead.
 
 <img src="https://s3.amazonaws.com/f.cl.ly/items/1a1H0B1o3v160147100S/Image%202014-12-31%20at%2010.10.01%20AM.png" width=-"500">
 
@@ -231,10 +234,10 @@ I've added a few templates here to help you get started.
 * [Simple transactional email template](http://leemunroe.github.io/grunt-email-workflow/dist/transaction.html)
 * [Branded email via CDN](http://leemunroe.github.io/grunt-email-workflow/dist/branded.html)
 * [Email with components](http://leemunroe.github.io/grunt-email-workflow/dist/components.html)
+* [Mailchimp's Modular Template Patterns]
 
 ### More resources
 
-* For more transactional email templates check out [Mailgun's collection of templates](http://github.com/mailgun/transactional-email-templates)
 * [Things I've learned about sending email](http://www.leemunroe.com/sending-email-designers-developers/)
 * [Things I've learned about building HTML email templates](http://www.leemunroe.com/building-html-email/)
 * Prefer Gulp? Daryll Doyle has created a [Gulp email creator](https://github.com/darylldoyle/Gulp-Email-Creator)
