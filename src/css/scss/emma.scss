@@ -1,10 +1,23 @@
-// Main scss styles
-// @import 'config';
-// @import 'global';
-// @import 'layout';
-// @import 'type';
-// @import 'buttons';
-// @import 'notices';
-// @import 'dividers';
-// @import 'other';
-// @import 'responsive';
+@import '../../../node_modules/modularscale-sass/stylesheets/modular-scale';
+
+@import 'base/variables',
+        'base/reset',
+        'base/type';
+
+
+@import 'layout/header',
+        'layout/base',
+        'layout/footer';
+
+@import 'components/buttons',
+        'components/notices',
+        'components/dividers',
+        'components/modular-template-patterns';
+
+// Emma default styling for their interface
+@import 'emma-responsive';
+
+// Because Emma will wrap everything in their parent selector
+.e2ma-template {
+  @import 'responsive';
+}

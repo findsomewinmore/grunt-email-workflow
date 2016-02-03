@@ -5,7 +5,8 @@ module.exports = {
       style: 'expanded'
     },
     files: {
-      '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss'
+      '<%= paths.src %>/css/main.css': '<%= paths.src %>/css/scss/main.scss',
+      '<%= paths.src %>/css/emma.css': '<%= paths.src %>/css/scss/emma.scss'
     }
   },
 
