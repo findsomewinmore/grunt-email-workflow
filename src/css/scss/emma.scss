@@ -14,8 +14,7 @@
         'components/dividers',
         'components/modular-template-patterns';
 
-// Emma default styling for their interface
-@import 'emma-responsive';
+@import 'vendor/emma';
 
 // Because Emma will wrap everything in their parent selector
 .e2ma-template {

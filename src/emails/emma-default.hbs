@@ -68,15 +68,15 @@ subject: Default Emma template
           <!-- // MODULE ROW -->
 
           <tr>
-            <td align="center" bgcolor="#F6F7F8" class="e2ma-unsubscribe" style="padding:50px 0px;" valign="top">
-              <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" width="640">
+            <td align="center" class="e2ma-unsubscribe" valign="top">
+              <table border="0" cellpadding="0" cellspacing="0" class="mobile-width" width="100%">
                 <tbody>
                   <tr>
                     <td align="left" valign="top">
-                      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="flexibleContainer">
                         <tbody>
                           <tr>
-                            <td align="left" class="stack" valign="top">
+                            <td align="left" class="flexibleContainerCell" valign="top">
                               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tbody>
                                   <tr>
@@ -91,13 +91,13 @@ subject: Default Emma template
                                 </tr>
                                 <tr>
                                   <td align="left" class="footer-text" style="font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:1.5; text-align:left;" valign="top">
-                                    <a href="#" style="color:#9d9e9f; text-decoration:none; pointer-events:none;">{{{ em2a.account_address }}} {{{ em2a.account_address_2 }}}<br>
-                                      {{{ em2a.account_city }}}, {{{ em2a.account_state }}} | {{{ em2a.account_zip }}} {{{ em2a.account_country }}}</a>
+                                    <a href="#" style="color:#9d9e9f; text-decoration:none; pointer-events:none;">{{ em2a.account_address }} {{ em2a.account_address_2 }}<br>
+                                      {{ em2a.account_city }}, {{ em2a.account_state }} | {{ em2a.account_zip }} {{ em2a.account_country }}</a>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td align="left" class="footer-text" style="font-family:Helvetica, Arial, sans-serif;font-size:11px; line-height:1.5; text-align:left; padding-top:20px;" valign="top">
-                                    <a href='{{{ em.email }}}' style='color:#9d9e9f; text-decoration:none;'>{{{ em2a.recipient }}}</a>
+                                    <a href='{{ em.email }}' style='color:#9d9e9f; text-decoration:none;'>{{ em2a.recipient }}</a>
                                   </td>
                                 </tr>
                               </tbody>
@@ -108,10 +108,11 @@ subject: Default Emma template
                               <tbody>
                                 <tr>
                                   <td align="center" style="padding-top:20px;" valign="bottom">
-                                    <div>{{{ em2a.emma }}}</div>
+                                    <div>{{ em2a.emma }}</div>
                                   </td>
                                 </tr>
-                              </tbody></table>
+                            </tbody>
+                          </table>
                           </td>
                         </tr>
                         </tbody>
@@ -120,7 +121,7 @@ subject: Default Emma template
                   </tr>
                   <tr>
                     <td align="left" style="line-height:0px; font-size:0px;" valign="top">
-                      <div style="line-height:0px; font-size:0px;">{{{ em2a.bug }}}</div>
+                      <div style="line-height:0px; font-size:0px;">{{ em2a.bug }}</div>
                     </td>
                   </tr>
                 </tbody>
